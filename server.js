@@ -15,7 +15,12 @@ app.use(express.json());
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, 'build')))
 
-// Catch all route
+// API Routes here, before the "Catch all route"
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/datafeeds', require('./routes/api/datafeeds'));
+
+// The following "catch all" route (note the *)is necessary
+// for a SPA's client-side routing to properly work 
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
