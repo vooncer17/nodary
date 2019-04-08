@@ -6,6 +6,7 @@ module.exports = {
 }
 
 async function create(req, res) {
+    console.log(req.user)
     try {
         await DataFeed.create(req.body);
         getAllFeeds(req, res);

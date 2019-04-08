@@ -1,40 +1,75 @@
 import React, { Component } from 'react';
-import {Route, Switch} from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
-import Nav from '../../components/Nav/Nav';
+import HomePage from '../../pages/HomePage/HomePage';
 import CoinPage from '../CoinPage/CoinPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
+import userService from '../../utils/userService'
 
 class App extends Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      subscriptions: [],
+      user: ''
+    }
+  }
+
+  async componentDidMount() {
+    const user = userService.getUser()
+    this.setState({ user })
+  }
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null })
+  }
+
+  handleSignupOrLogin = () => {
+    this.setState({user: userService.getUser()});
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-        <Nav/>
-          <Switch>
-            <Route exact path ='/' render={() =>
-            <>
-            <div>Home Page Woo</div>
-            </>
-            }
+      <div>
+      <header className='header-footer'>N O D A R Y</header>
+        <Switch>
+          <Route exact path='/' render={(props) =>
+            <HomePage 
+            {...props}
+            user={this.state.user}
+            handleLogout={this.handleLogout}
             />
-            <Route exact path ='/coin' render={(props) =>
-              <CoinPage
+          } />
+          />
+          <Route exact path='/coin' render={(props) => (
+            userService.getUser() ?
+            <CoinPage
               {...props}
-              />
-            }/>
-            <Route exact path ='/login' render={(props) =>
-              <LoginPage
-              {...props}
-              />
-            }/>
-            <Route exact path ='/signup' render={(props) =>
-              <SignupPage
-              {...props}
-              />
-            }/>
-          </Switch>
+            />
+            :
+            <Redirect to='login'/>
+          )} />
+          <Route exact path='/login' render={({ history }) =>
+            <LoginPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          } />
+          <Route exact path='/signup' render={({ history }) => 
+            <SignupPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+        </Switch>
       </div>
     );
   }
