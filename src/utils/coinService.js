@@ -10,7 +10,8 @@ function getAllCoins() {
     console.log('hitting')
     return res.json()
   }).then(data => {
-    console.log('route ',data)
+    // console.log('route ',data)
+    console.log('i ran')
     return data;
   })
   }

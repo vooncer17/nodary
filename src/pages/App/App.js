@@ -49,7 +49,7 @@ class App extends Component {
             />
           } />
           />
-          <Route exact path='/coin' render={(props) => (
+          <Route exact path='/coin/:id' render={(props) => (
             userService.getUser() ?
             <CoinPage
               {...props}
