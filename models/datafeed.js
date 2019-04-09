@@ -10,7 +10,6 @@ var commentSchema = new Schema({
   });
 
 const dataFeedSchema = new Schema({
-  initials: String,
   reputation: Number,
   upTime: Number,
   dataAccess: Array,

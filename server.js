@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'build')))
 // API Routes here, before the "Catch all route"
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/datafeeds', require('./routes/api/datafeeds'));
+app.use('/api/allcoins', require('./routes/api/coins'))
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work 

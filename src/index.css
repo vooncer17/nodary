@@ -30,8 +30,8 @@ button:focus, .btn:focus {
 .header-footer {
   height: 50px;
   padding: 10px;
-  margin: 15px 0;
-  color: grey;
+  color: black;
   font-size: 18px;
   text-align: center;
+  background-color: #709090
 }
