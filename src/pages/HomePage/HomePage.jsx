@@ -25,7 +25,6 @@ class HomePage extends Component {
 
     return (
       <div className={styles.HighScores}>
-      { this.state.coins && console.log(this.state.coins[0])}
         <Nav user={this.props.user} handleLogout={this.props.handleLogout}/>
         <table className={`${styles.table} table text info`}>
         <thead>
@@ -36,7 +35,7 @@ class HomePage extends Component {
               <tr key={coin.CoinInfo.Id}>
                 <td><span className="badge">{idx+1}</span></td>
                 <td><img className={styles.CoinImg} src={`https://www.cryptocompare.com/${coin.CoinInfo.ImageUrl}`}></img></td>
-                <td><Link to={`/coin/${coin.CoinInfo.Id}`}>{coin.CoinInfo.Name}</Link></td>
+                <td><Link to={`/coin/${coin.CoinInfo.Name}`}>{coin.CoinInfo.Name}</Link></td>
                 <td>{coin.RAW.USD.PRICE}</td>
                 <td>{coin.RAW.USD.MKTCAP}</td>
               </tr>
