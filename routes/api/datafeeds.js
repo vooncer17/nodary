@@ -8,7 +8,7 @@ router.get('/', dataFeedsCtrl.getAllFeeds)
 /*---------- Protected Routes ----------*/
 router.use(require('../../config/auth'))
 router.post('/', checkAuth, dataFeedsCtrl.create)
-router.post('/subscribe/:id', checkAuth, dataFeedsCtrl.subscribe)
+router.post('/subscribe', checkAuth, dataFeedsCtrl.subscribe)
 
 
 function checkAuth(req, res, next) {

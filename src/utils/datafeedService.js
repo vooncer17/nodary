@@ -34,10 +34,9 @@ function subscribeToFeed(postId) {
       'Content-type': 'application/json',
       'Authorization': 'Bearer ' + tokenService.getToken()
     },
-    body: postId
+    body: JSON.stringify(postId)
   };
-
-  return fetch('/api/datafeeds/subscribe/'+postId, options).then(res => res.json());
+  return fetch('/api/datafeeds/subscribe/', options).then(res => res.json());
 }
 
 
