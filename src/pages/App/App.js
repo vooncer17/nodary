@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
+import DataFeedPage from '../../pages/DataFeedPage/DataFeedPage';
 import HomePage from '../../pages/HomePage/HomePage';
 import CoinPage from '../CoinPage/CoinPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -67,6 +68,11 @@ class App extends Component {
             <SignupPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+          <Route exact path='/datafeeds' render={(props) => 
+            <DataFeedPage
+              {...props}
             />
           }/>
         </Switch>

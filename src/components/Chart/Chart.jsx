@@ -58,7 +58,7 @@ class Chart extends Component {
 
 
     render() {
-        const { chartOptions, hoverData } = this.state;
+        const { chartOptions } = this.state;
         // this.setState({ chartOptions: [...this.state.chartOptions, ], hoverData: [...this.state.hoverData, ]})
         return (
             <div>

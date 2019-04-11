@@ -34,7 +34,7 @@ class HomePage extends Component {
             {this.state.coins && this.state.coins.map((coin, idx) => (
               <tr key={coin.CoinInfo.Id}>
                 <td><span className="badge">{idx+1}</span></td>
-                <td><img className={styles.CoinImg} src={`https://www.cryptocompare.com/${coin.CoinInfo.ImageUrl}`}></img></td>
+                <td><img className={styles.CoinImg} src={`https://www.cryptocompare.com/${coin.CoinInfo.ImageUrl}`} alt="No"></img></td>
                 <td><Link to={`/coin/${coin.CoinInfo.Name}`}>{coin.CoinInfo.Name}</Link></td>
                 <td>{coin.RAW.USD.PRICE}</td>
                 <td>{coin.RAW.USD.MKTCAP}</td>

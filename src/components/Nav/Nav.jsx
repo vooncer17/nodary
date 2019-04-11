@@ -5,7 +5,7 @@ import './Nav.css';
 const Nav = (props) => {
   let nav = props.user ?
     <div>
-      {props.user && <Link to='/data-feeds' className='NavBar-link'>DATA FEEDS</Link>}
+      {props.user && <Link to='/datafeeds' className='NavBar-link'>DATA FEEDS</Link>}
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='' className='NavBar-link' onClick={props.handleLogout}>LOG OUT</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

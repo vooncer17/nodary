@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: {type: String, required: true, lowercase: true, unique: true},
   password: String,
-  dataFeeds: [{type: Schema.Types.ObjectId, ref: 'DataFeed'}]
+  dataFeeds: [{type: Schema.Types.ObjectId, ref: 'DataFeed'}],
+  subscriptions: [{type: Schema.Types.ObjectId, ref: 'DataFeed'}]
 }, {
   timestamps: true
 });
