@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
   email: {type: String, required: true, lowercase: true, unique: true},
   password: String,
   dataFeeds: [{type: Schema.Types.ObjectId, ref: 'DataFeed'}],
-  subscriptions: [{type: Schema.Types.ObjectId, ref: 'DataFeed'}]
+  subscriptions: Array
 }, {
   timestamps: true
 });

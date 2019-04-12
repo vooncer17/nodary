@@ -6,6 +6,7 @@ import HomePage from '../../pages/HomePage/HomePage';
 import CoinPage from '../CoinPage/CoinPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 import userService from '../../utils/userService'
 
 class App extends Component {
@@ -73,6 +74,13 @@ class App extends Component {
           <Route exact path='/datafeeds' render={(props) => 
             <DataFeedPage
               {...props}
+            />
+          }/>
+          <Route exact path={`/profile/${this.state.user._id}`} render={(props) => 
+            <ProfilePage
+              {...props}
+              user={this.state.user}
+              handleLogout={this.handleLogout}
             />
           }/>
         </Switch>
