@@ -40,8 +40,6 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-      <header className='header-footer'>N O D A R Y</header>
         <Switch>
           <Route exact path='/' render={(props) =>
             <HomePage 
@@ -84,7 +82,6 @@ class App extends Component {
             />
           }/>
         </Switch>
-      </div>
     );
   }
 }

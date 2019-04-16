@@ -1,18 +1,72 @@
-.NavBar {
-    display: flex;
-    justify-content: flex-start;
-    width: 100vw;
-    align-items: center;
-    margin: 0 0 20px;
+.Nav {
     height: 50px;
-    background-color: purple;
-    
-  }
-  
-  .NavBar-link {
-    margin: 0 10px;
-  }
-  
-  .NavBar-welcome {
-    color: grey;
-  }
+    color: #000000;
+    font-size: .875rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'system-ui, -apple-system, BlinkMacSystemFont', "Helvetica Neue",
+    "Lucida Grande", "Segoe UI";
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: aquamarine;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: lightblue;
+
+}
+
+.SubNav {
+  height: 50px;
+  color: black;
+  font-size: .875rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Poppins';
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: gainsboro;
+  box-shadow: 0 3px 15px 1px gainsboro;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
+}
+
+.NavSearch {
+  width: calc(90% - 20px);
+  height: 35px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-family: 'Poppins';
+  background-color: rgba(0,0,0,.05);
+  border: none;
+}
+
+.searchbtn {
+  height: 37px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: rgb(224,114, 106);
+  text-align: center;
+  border: none;
+  font-family: 'Poppins';
+  letter-spacing: 0.3px;
+  font-size: .80rem;
+}
+
+.joinbtn {
+  border: solid;
+  border-width: .5px;
+  border-color: #9a9a9a;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.75;
+}
+
+.Nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.Nav-link:hover {
+  color: purple;
+}
