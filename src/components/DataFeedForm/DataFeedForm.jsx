@@ -46,16 +46,6 @@ class DataFeedForm extends Component {
               <input type="number" className="form-control" placeholder="Uptime" value={this.state.upTime} name="upTime" onChange={this.handleChange} />
             </div>
           </div>
-          {/* <div className="form-group">
-            <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="Data Access" value={this.state.dataAccess} name="dataAccess" onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="Nodarized" value={this.state.nod} name="nodarized" onChange={this.handleChange} />
-            </div>
-          </div> */}
           <div className="form-group">
             <div className="col-sm-12 text-center">
               <button className="btn btn-default">Create DataFeed</button>&nbsp;&nbsp;

@@ -7,15 +7,15 @@ const Nav = (props) => {
     <div className="navcontainer">
       <header className="Nav">
         &nbsp;&nbsp;&nbsp;
-      <span><Link to={`profile/${props.user._id}`} className="Nav-link">Profile</Link></span>
+      <Link to={`/profile/${props.user._id}`} className="Nav-link">Profile</Link>
         &nbsp;&nbsp;&nbsp;
-      {props.user && <Link to='/datafeeds' className="Nav-link">Products</Link>}
+      <Link to='/datafeeds' className="Nav-link">Products</Link>
         &nbsp;&nbsp;&nbsp;
       <Link to='' onClick={props.handleLogout} className="Nav-link">Solutions</Link>
         &nbsp;&nbsp;&nbsp;
-      <span><Link to='' onClick={props.handleLogout} className="Nav-link">Resources</Link></span>
+      <Link to='' onClick={props.handleLogout} className="Nav-link">Resources</Link>
         &nbsp;&nbsp;&nbsp;
-      <span><Link to='' onClick={props.handleLogout} className="Nav-link">Docs</Link></span>
+      <Link to='' onClick={props.handleLogout} className="Nav-link">Docs</Link>
         &nbsp;&nbsp;&nbsp;
       </header>
       <div className="SubNav">
@@ -26,9 +26,8 @@ const Nav = (props) => {
         <button className="searchbtn">Search</button>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span className="joinbtn">Join</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span>Login</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Link id="logout" to='' className='NavBar-link' onClick={props.handleLogout}>Log Out</Link>
+        &nbsp;&nbsp;
       </div>
     </div>
     :

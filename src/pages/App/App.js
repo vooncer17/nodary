@@ -8,6 +8,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import userService from '../../utils/userService'
+import Nav from '../../components/Nav/Nav'
 
 class App extends Component {
   constructor() {
@@ -40,6 +41,9 @@ class App extends Component {
 
   render() {
     return (
+      <>
+      <Nav history={this.props.history} location={this.props.location} match={this.props.match} user={this.state.user} handleLogout={this.handleLogout} />
+      
         <Switch>
           <Route exact path='/' render={(props) =>
             <HomePage 
@@ -72,8 +76,10 @@ class App extends Component {
           <Route exact path='/datafeeds' render={(props) => 
             <DataFeedPage
               {...props}
+              user={this.state.user}
             />
           }/>
+          {this.state.user && 
           <Route exact path={`/profile/${this.state.user._id}`} render={(props) => 
             <ProfilePage
               {...props}
@@ -81,7 +87,9 @@ class App extends Component {
               handleLogout={this.handleLogout}
             />
           }/>
+          }
         </Switch>
+        </>
     );
   }
 }

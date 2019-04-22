@@ -1,7 +1,163 @@
-.DataFeedPage {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
+#uc {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.doffhed {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  margin-right: 30px;
+}
+
+#status {
+  margin-bottom: 10px;
+  font-family: "Fira Mono", "Andale Mono", "Consolas", monospace;
+}
+
+#pubppri {
+  color: #19a974;
+}
+
+#BoxA {
+  grid-row: 1;
+  height: 100px;
+  margin-top: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
+}
+
+#BoxC {
+  grid-row: 3;
+  height: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
+}
+
+#rminfo {
+  grid-column: 1;
+  padding-top: 20px
+}
+
+.feedtable {
+  grid-column: 1/3;
+  margin-top: 40px;
+}
+
+#tablehead {
+  text-align: left;
+}
+
+#rmstats {
+  background-color: orange;
+  grid-column: 2;
+  padding-top: 20px; 
+  display: grid;
+  height: 300px;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+#ppc {
+  grid-row: 1;
+  grid-column: 1/3;
+}
+
+#nod {
+  grid-row: 2;
+  grid-column: 1/3;
+}
+
+#oracadd {
+  grid-column: 1/3;
+  grid-row: 4;
+}
+
+.descrip {
+  margin-right: 30px;
+}
+
+table { 
+	border-collapse: collapse; 
+	margin:25px;
+	}
+
+th { 
+	color: black;; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
   }
+  
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
+
+#nodapitxt {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#nodid{
+  text-align: center;
+  font-weight: bold;
+}

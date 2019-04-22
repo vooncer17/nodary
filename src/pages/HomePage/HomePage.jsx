@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Nav from '../../components/Nav/Nav';
 import coinService from '../../utils/coinService'
 import './HomePage.css'
@@ -15,6 +14,7 @@ class HomePage extends Component {
       await coinService.getAllCoins()
         .then(coins => {
           this.setState({ coins: coins })
+          console.log(this.props.user)
         })
     } catch (err) {
       console.log('ERR ', err)
@@ -26,7 +26,6 @@ class HomePage extends Component {
 
     return (
       <>
-        <Nav user={this.props.user} handleLogout={this.props.handleLogout} />
         <div className="HPwrapper">
         <div className='BoxA'>
         <p className="mktplace">See All APIs</p>

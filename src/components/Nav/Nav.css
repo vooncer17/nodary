@@ -32,7 +32,7 @@
 }
 
 .NavSearch {
-  width: calc(90% - 20px);
+  width: calc(70% - 20px);
   height: 35px;
   padding-left: 10px;
   font-size: 14px;
@@ -69,4 +69,11 @@
 
 .Nav-link:hover {
   color: purple;
+}
+
+#logout {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
 }
