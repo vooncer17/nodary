@@ -41,6 +41,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
+  height: 100vh;
 }
 
 #rminfo {
@@ -86,78 +87,44 @@
   margin-right: 30px;
 }
 
-table { 
-	border-collapse: collapse; 
-	margin:25px;
-	}
-
-th { 
-	color: black;; 
-	font-weight: bold; 
-	}
-
-td, th { 
-	padding: 10px; 
-	border: 1px solid #ccc; 
-	text-align: left; 
-	font-size: 18px;
-  }
-  
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
-	table { 
-	  	width: 100%; 
-	}
-
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-		/* Label the data */
-		content: attr(data-column);
-
-		color: #000;
-		font-weight: bold;
-	}
-
-}
 
 #nodapitxt {
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 30px;
 }
 
 #nodid{
   text-align: center;
   font-weight: bold;
+  border-right: 2px solid #dee2e6;
+}
+
+#coldd{
+  border-right: 2px solid #dee2e6;
+}
+
+#qOne {
+  grid-column: 1;
+  padding-top: 20px
+}
+
+.ddhed {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-right: 30px;
+  padding-top: 20px;
+  grid-column: 1;
+}
+
+td ,tr {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+Table {
+  grid-column: 1/3;
+  margin: 0 auto;
 }

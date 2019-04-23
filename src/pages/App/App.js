@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import DataFeedPage from '../../pages/DataFeedPage/DataFeedPage';
 import HomePage from '../../pages/HomePage/HomePage';
-import CoinPage from '../CoinPage/CoinPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
@@ -53,14 +52,6 @@ class App extends Component {
             />
           } />
           />
-          <Route exact path='/coin/:id' render={(props) => (
-            userService.getUser() ?
-            <CoinPage
-              {...props}
-            />
-            :
-            <Redirect to='login'/>
-          )} />
           <Route exact path='/login' render={({ history }) =>
             <LoginPage
               history={history}

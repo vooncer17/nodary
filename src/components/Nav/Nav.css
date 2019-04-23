@@ -1,7 +1,6 @@
 .Nav {
     height: 50px;
     color: #000000;
-    font-size: .875rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -13,32 +12,35 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: lightblue;
+    font-size: 16px;
+    padding-right: 20px;
 
 }
 
 .SubNav {
+  font-size: 14px;
   height: 50px;
   color: black;
-  font-size: .875rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   font-family: 'Poppins';
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: gainsboro;
-  box-shadow: 0 3px 15px 1px gainsboro;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  box-shadow: 0 2px 5px -2px rgb(160, 143, 143);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 
 }
 
 .NavSearch {
-  width: calc(70% - 20px);
+  width: 60%;
   height: 35px;
-  padding-left: 10px;
   font-size: 14px;
   font-family: 'Poppins';
   background-color: rgba(0,0,0,.05);
   border: none;
+  display: flex;
+  justify-content: center;
 }
 
 .searchbtn {
@@ -50,7 +52,7 @@
   border: none;
   font-family: 'Poppins';
   letter-spacing: 0.3px;
-  font-size: .80rem;
+  font-size: 14px;
 }
 
 .joinbtn {
@@ -60,6 +62,8 @@
   padding-left: 1rem;
   padding-right: 1rem;
   line-height: 1.75;
+  font-family: 'Poppins';
+  background-color: gainsboro;
 }
 
 .Nav-link {
@@ -76,4 +80,10 @@
   color: black;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+#nodary {
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-weight: bold;
 }

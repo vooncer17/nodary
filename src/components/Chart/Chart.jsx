@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
-import coinService from '../../utils/coinService'
 
 class Chart extends Component {
     constructor(props) {
@@ -14,7 +13,7 @@ class Chart extends Component {
                     date: ['A', 'B', 'C'],
                 },
                 series: [
-                    { data: [] }
+                    { data: [1,2,3] }
                 ],
                 plotOptions: {
                     series: {
@@ -37,21 +36,21 @@ class Chart extends Component {
 
 
     async componentDidMount() {
-        try {
-            let prices = await coinService.getOneCoin(this.props.name)
-            let newPrices = prices.map(x=> x.close)
+        // try {
+        //     let prices = await coinService.getOneCoin(this.props.name)
+        //     let newPrices = prices.map(x=> x.close)
 
-            this.setState({
-                chartOptions: {
-                    series: [
-                        { data: newPrices }
-                    ]
-                }
-            })
-            console.log(this.state.chartOptions.series[0])     
-        } catch (err) {
-            console.log('ERR', err)
-        }
+        //     this.setState({
+        //         chartOptions: {
+        //             series: [
+        //                 { data: newPrices }
+        //             ]
+        //         }
+        //     })
+        //     console.log(this.state.chartOptions.series[0])     
+        // } catch (err) {
+        //     console.log('ERR', err)
+        // }
     }
 
 

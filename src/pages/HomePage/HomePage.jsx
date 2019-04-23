@@ -1,24 +1,9 @@
 import React, { Component } from 'react';
-import Nav from '../../components/Nav/Nav';
-import coinService from '../../utils/coinService'
 import './HomePage.css'
 
 
 class HomePage extends Component {
   state = {
-    coins: null
-  }
-
-  async componentDidMount() {
-    try {
-      await coinService.getAllCoins()
-        .then(coins => {
-          this.setState({ coins: coins })
-          console.log(this.props.user)
-        })
-    } catch (err) {
-      console.log('ERR ', err)
-    }
   }
 
   render() {

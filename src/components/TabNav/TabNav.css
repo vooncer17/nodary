@@ -22,6 +22,9 @@
     border-radius: 5px 5px 0px 0px;
     padding-bottom: 10px;
     border-bottom: 2px solid rgb(255, 205, 58);
+    color: rgb(158, 119, 0);
+    font-weight: bold;
+    transition: background-color .2s;
   }
   
   #data {
@@ -34,6 +37,13 @@
     border-radius: 5px 5px 0px 0px;
     padding-bottom: 10px;
     border-bottom: 2px solid #cb3837;
+    color: #cb3837;
+    font-weight: bold;
+    transition: background-color .2s;
+  }
+
+  #data:hover{
+    background-color: rgba(203, 56, 55, 0.2);
   }
   
   #test {
@@ -45,4 +55,7 @@
     border-radius: 5px 5px 0px 0px;
     padding-bottom: 10px;
     border-bottom: 2px solid rgb(200, 54, 195);
+    color: rgb(120, 33, 117);
+    font-weight: bold;
+    transition: background-color .2s;
   }

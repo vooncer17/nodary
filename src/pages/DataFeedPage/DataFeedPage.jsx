@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import Select from 'react-select'
 import TabNav from '../../components/TabNav/TabNav'
 import { Link } from 'react-router-dom';
+import Table from 'react-bootstrap/Table'
 import Nodestats from '../../components/NodeStats/NodeStats';
 import dataFeedService from '../../utils/dataFeedService'
 import './DataFeedPage.css'
 
+const options = [{ value: 'basketball', label: 'Basketball' },
+{ value: 'baseball', label: 'Baseball' },
+{ value: 'hockey', label: 'Hockey' },
+{ value: 'football', label: 'Football' }]
+
 class DataFeedPage extends Component {
     state = {
         selOption: 'README',
-        dataFeeds: []
+        dataFeeds: [],
     }
 
     handleExploreClick = (e) => {
@@ -29,14 +36,24 @@ class DataFeedPage extends Component {
         }
     }
 
+    handleChange = (selectedOption) => {
+        this.setState({ selectedOption });
+        console.log(`Option selected:`, selectedOption);
+      }
+
     render() {
+        const {selectedOptionA} = this.state
+        const {selectedOptionB} = this.state
+        const {selectedOptionC} = this.state
+        const {selectedOptionD} = this.state
+
         return (
             <>
                 <div id="BoxA">
                     <div id="uc">Sports Data Feeds</div>
                     <div id="status">7.11 | <span id="pubppri">Public</span> | Updated 5 Days Ago</div>
                 </div>
-                <TabNav handle={this.handleExploreClick} />
+                <TabNav selOption={this.state.selOption} handle={this.handleExploreClick} />
                 {((this.state.selOption === 'README') ?
                     <>
                         <div id="BoxC">
@@ -68,33 +85,61 @@ class DataFeedPage extends Component {
                     </>
                     :
                     (this.state.selOption === 'DATA') ?
-
                         <div id="BoxC">
-                        <div id="nodapitxt">Node Operators, Data Feeds</div>
+                        <Table border hover size="sm">
+                            <div id="nodapitxt">Node Operators and Data Feeds</div>
                             <table className='feedtable'>
                                 <thead>
                                     <tr><td id="nodid" colspan="3">Nodes</td><td id="nodid" colspan="4">APIs Offered</td></tr>
-                                    <tr id="tablehead"><th>Node Address</th><th>Reputation</th><th>Collateral</th><th>FantasyData</th><th>SportsRadar</th><th>Gracenote</th><th>TXODDS</th><th>Add to Job Spec</th></tr>
+                                    <tr id="tablehead"><th>Node Address</th><th>Reputation</th><th id="coldd">Collateral</th><th>FantasyData</th><th>SportsRadar</th><th>Gracenote</th><th id="coldd">TXODDS</th><th>Add to Job Spec</th></tr>
                                     {console.log(this.state.dataFeeds)}
                                 </thead>
                                 <tbody>
                                     {this.state.dataFeeds && this.state.dataFeeds.map((feed, idx) => (
                                         <tr key={idx}>
                                             <td><Link>{feed.creator}</Link></td>
-                                            <td>67.31</td>
-                                            <td>$120K</td>
+                                            <td >67.31</td>
+                                            <td id="coldd">$120K</td>
                                             <td>X</td>
                                             <td>X</td>
                                             <td>X</td>
-                                            <td>X</td>
+                                            <td id="coldd">X</td>
                                             <td><button onClick={() => dataFeedService.deleteFeed()}>Delete Feed</button></td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
-                        </div> :
+                            </Table>
+                        </div>
+                        :
                         (this.state.selOption === 'TEST') ?
-                            <div>TEST</div> :
+                        <div id="BoxC">
+                        <div className="ddhed">What sport would you like data for?</div>
+                            <Select id="qOne"
+                                name="qOne"
+                                value={selectedOptionA}
+                                onChange={this.handleChange}
+                                options={options}
+                                />
+                        <div className="ddhed">What category of data do you want?</div>
+                            <Select id="qOne"
+                                name="qTwo"
+                                value={selectedOptionB}
+                                onChange={this.handleChange}
+                                options={options}
+                                />
+                        <div className="ddhed">How would you like to trigger data being pulled into your contract?</div>
+                            <Select id="qOne"
+                                value={selectedOptionC}
+                                onChange={this.handleChange}
+                                options={options}
+                                />
+                        <div className="ddhed">How much decentralization would you like?</div>
+                            <Select id="qOne"
+                                value={selectedOptionD}
+                                onChange={this.handleChange}
+                                options={options}
+                                /></div>:
                             <div>Error</div>)}
             </>
         )
